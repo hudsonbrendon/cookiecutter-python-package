@@ -2,7 +2,7 @@ version: 2
 
 updates:
   - package-ecosystem: "pip"
-    directory: "/{{cookiecutter.project_slug}}"
+    directory: "/"
     schedule:
       interval: "daily"
       time: "06:00"
