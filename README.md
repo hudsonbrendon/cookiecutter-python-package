@@ -99,6 +99,21 @@ And to publish to the register, run:
 poetry publish
 ```
 
+# Documentation
+
+Creating clear and structured documentation is essential for any Python package, and MkDocs is a great tool for this purpose. With its Markdown-based approach and easy deployment options, MkDocs simplifies the process of generating and maintaining project documentation.
+
+For a Python package template, integrating MkDocs allows developers to:
+
+- Provide well-organized API documentation.
+- Maintain a consistent structure for guides and tutorials.
+- Easily host documentation on GitHub Pages or similar platforms.
+
+By combining MkDocs with plugins like mkdocstrings, you can automatically generate documentation from docstrings, ensuring that your package remains well-documented and easy to use.
+
+Would you like a more detailed guide on setting it up? Access [https://www.mkdocs.org/](https://www.mkdocs.org/)
+
+
 ## Branch and commit patterns
 
 To create branches, we use the Git Flow pattern, read more about it at:
