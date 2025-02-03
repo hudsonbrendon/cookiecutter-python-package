@@ -5,6 +5,7 @@
     "pkg_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_description": "{{ cookiecutter.project_name }} description",
     "author": "Hudson Brendon",
+    "github_matainer": "hudsonbrendon",
+    "project_github_url": "https://github.com/{{ cookiecutter.github_matainer }}/{{ cookiecutter.project_slug }}",
     "email": "contato.hudsonbrendon@gmail.com"
-
 }
