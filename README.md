@@ -4,24 +4,35 @@
 cookiecutter https://github.com/hudsonbrendon/cookiecutter-python-package.git
 ```
 
-## Installing Poetry
+## Installing uv
 
-We will use poetry to manage the virtual environment and our dependencies, to do this run:
+We use uv to manage dependencies and virtual environments due to its speed and efficiency. To install uv, run:
 
 ```bash
-curl -sSL https://install.python-poetry.org | python3 -
+# MacOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows PowerShell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-With poetry installed, run:
+With uv installed, create and activate a virtual environment:
 
 ```bash
-poetry install --with dev
+# Create a virtual environment
+uv venv
+
+# Activate the virtual environment
+# On macOS/Linux:
+source .venv/bin/activate
+# On Windows:
+.venv\Scripts\activate
 ```
 
-Then activate the virtual environment with:
+Install the project and its dependencies:
 
 ```bash
-poetry shell
+uv pip install -e ".[dev]"
 ```
 
 # Pre-commit
@@ -39,19 +50,17 @@ pre-commit install
 To add a dependency we can run:
 
 ```bash
-poetry add <dependence>
+# Add a regular dependency
+uv pip install package-name
+
+# Add a development dependency
+uv pip install package-name --dev
 ```
 
-If your dependency is at a development level (such as testing packages), don't forget to use the --dev flag:
+To update dependencies:
 
 ```bash
-poetry add <dependency> --group dev
-```
-
-To remove a dependency, use:
-
-```bash
-poetry removes <dependency>
+uv pip sync
 ```
 
 ## Tests
@@ -60,7 +69,6 @@ To run the tests directly in the environment, run:
 
 ```bash
 pytest -n auto
-
 ```
 
 If you want to run a specific test, run:
@@ -90,13 +98,13 @@ And then access [http://localhost:8000](http://localhost:8000) to view the conte
 To build the application, run:
 
 ```bash
-poetry build
+python -m build
 ```
 
-And to publish to the register, run:
+And to publish to PyPI, run:
 
 ```bash
-poetry publish
+twine upload dist/*
 ```
 
 # Documentation
