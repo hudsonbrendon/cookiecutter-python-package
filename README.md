@@ -95,17 +95,31 @@ And then access [http://localhost:8000](http://localhost:8000) to view the conte
 
 # Build and publish
 
-To build the application, run:
+To build the package using `uv`, run:
 
 ```bash
-python -m build
+uv build
 ```
 
-And to publish to PyPI, run:
+This will create distribution packages in the `dist/` directory.
+
+To publish your package to PyPI with `uv`, run:
 
 ```bash
-twine upload dist/*
+uv publish
 ```
+
+You can also specify options like using TestPyPI first:
+
+```bash
+# Publish to TestPyPI
+uv publish --repository testpypi
+
+# Publish to PyPI
+uv publish
+```
+
+Make sure you have configured your PyPI credentials properly before publishing.
 
 # Documentation
 
