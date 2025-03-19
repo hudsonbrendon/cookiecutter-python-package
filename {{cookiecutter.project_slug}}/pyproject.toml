@@ -1,39 +1,28 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
 name = "{{cookiecutter.pkg_name}}"
 version = "{{cookiecutter.project_version}}"
 description = "{{cookiecutter.project_description}}"
-readme = "README.md"
 authors = [
     {name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}"}
 ]
+readme = "README.md"
 requires-python = ">=3.11"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
-
+dependencies = []
 [project.urls]
 "Homepage" = "{{cookiecutter.project_github_url}}"
 "Bug Tracker" = "{{cookiecutter.project_github_url}}/issues"
 
-[tool.hatch.build.targets.wheel]
-packages = ["{{cookiecutter.pkg_name}}"]
 
-[tool.hatch.envs.default]
-dependencies = [
-    "ruff>=0.2.2",
-    "pre-commit>=3.6.2",
-    "pytest>=8.0.1",
-    "pytest-sugar>=1.0.0",
-    "pytest-cov>=4.1.0",
-    "pytest-xdist>=3.5.0",
-    "coverage>=7.4.2",
+[dependency-groups]
+dev = [
+    "coverage>=7.7.0",
     "mkdocs>=1.6.1",
-    "mkdocstrings>=0.27.0",
-    "mkdocs-material>=9.6.1",
+    "mkdocs-material>=9.6.9",
+    "mkdocstrings>=0.29.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+    "pytest-sugar>=1.0.0",
+    "pytest-xdist>=3.6.1",
+    "ruff>=0.11.0",
 ]

@@ -32,7 +32,7 @@ source .venv/bin/activate
 Install the project and its dependencies:
 
 ```bash
-uv pip install -e ".[dev]"
+uv sync
 ```
 
 # Pre-commit
@@ -51,16 +51,16 @@ To add a dependency we can run:
 
 ```bash
 # Add a regular dependency
-uv pip install package-name
+uv add package-name
 
 # Add a development dependency
-uv pip install package-name --dev
+uv add package-name --dev
 ```
 
 To update dependencies:
 
 ```bash
-uv pip sync
+uv sync
 ```
 
 ## Tests

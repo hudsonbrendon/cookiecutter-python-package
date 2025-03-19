@@ -14,11 +14,11 @@ before_script:
 ruff:
   stage: test
   script:
-    - uv pip install -e ".[dev]"
+    - uv sync
     - ruff check .
 
 test:
   stage: test
   script:
-    - uv pip install -e ".[dev]"
+    - uv sync
     - pytest # Run pytest for testing
