@@ -9,17 +9,16 @@ variables:
 
 before_script:
   - python -V
-  - pip install poetry
-  - poetry config virtualenvs.create false # Disable virtualenvs, we'll use global
+  - pip install uv
 
 ruff:
   stage: test
   script:
-    - poetry install --no-root
+    - uv sync
     - ruff check .
 
 test:
   stage: test
   script:
-    - poetry install --no-root
-    - poetry run pytest # Run pytest for testing
+    - uv sync
+    - pytest # Run pytest for testing
